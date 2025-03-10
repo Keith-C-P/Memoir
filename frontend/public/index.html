@@ -80,14 +80,33 @@
             </ul>
         </div>
 
-        <div class="contacts-panel" id="contactsPanel">
+        <!-- <div class="contacts-panel" id="contactsPanel">
             <h4>Contacts</h4>
             <ul>
                 <li class="contact-card">Alice</li>
                 <li class="contact-card">Bob</li>
                 <li class="contact-card">Charlie</li>
             </ul>
+        </div> -->
+
+        <div class="contacts-panel" id="contactsPanel">
+            <h4>Contacts</h4>
+            <ul id="contactsList">
+                <li class="contact-card" onclick="openChat('Keith', 'Friend', 'Yesterday', './assets/cat.jpeg')">
+                    <img src="./assets/cat.jpeg" alt="Keith">
+                    <p>Keith</p>
+                </li>
+                <li class="contact-card" onclick="openChat('Alice', 'Colleague', 'Last week', './assets/alice.jpeg')">
+                    <img src="./assets/alice.jpeg" alt="Alice">
+                    <p>Alice</p>
+                </li>
+                <li class="contact-card" onclick="openChat('John', 'Brother', 'Today', './assets/john.jpeg')">
+                    <img src="./assets/john.jpeg" alt="John">
+                    <p>John</p>
+                </li>
+            </ul>
         </div>
+        
 
         <div class="button-group">
             <button onclick="toggleHistory()">View History</button>

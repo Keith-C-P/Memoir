@@ -27,23 +27,25 @@ function updateInfoCard(personData) {
 }
 
 // 3️⃣ Simulating person detection
-function mockPersonDetected() {
-    const mockData = {
-        name: "Keith",
-        relation: "Friend",
-        lastMet: "Yesterday",
-        conversation: [
-            "Point blah blah blah",
-            "Point blah blah blah",
-            "Point blah blah blah",
-            "Point blah blah blah"
-        ]
-    };
-    updateInfoCard(mockData);
-}
+// function mockPersonDetected() {
+    
+// }
+
+const mockData = {
+    name: "Keith",
+    relation: "Friend",
+    lastMet: "Yesterday",
+    conversation: [
+        "Point blah blah blah",
+        "Point blah blah blah",
+        "Point blah blah blah",
+        "Point blah blah blah"
+    ]
+};
+updateInfoCard(mockData);
 
 // Simulate detection every 5 seconds
-setInterval(mockPersonDetected, 5000);
+// setInterval(mockPersonDetected, 5000);
 
 // 2️⃣ Function to toggle history panel visibility
 function toggleHistory() {
@@ -81,6 +83,18 @@ function toggleContacts() {
     }
     // adjustScrollability();
 }
+
+function openChat(name, relation, lastMet, photo) {
+    document.getElementById("personName").textContent = "Name: " + name;
+    document.getElementById("personRelation").textContent = "Relation: " + relation;
+    document.getElementById("lastMet").textContent = "Last met: " + lastMet;
+    document.querySelector(".person-photo img").src = photo;
+
+    // Show last conversation section when switching to a contact
+    document.getElementById("infoCard").classList.add("show-convo");
+    document.getElementById("infoCard").classList.remove("show-history", "show-contacts");
+}
+
 
 // function adjustScrollability() {
 //     const infoCard = document.getElementById("infoCard");

@@ -45,7 +45,7 @@ body {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #be4167;
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -55,7 +55,7 @@ body {
 }
 
 .button-group button:hover {
-    background-color: #0056b3;
+    background-color: #eac3d3;
 }
 
 .person-photo {
@@ -118,7 +118,7 @@ body {
 }
 
 .info-card.show-contacts .contacts-panel {
-    max-height: 150px; /* Adjust as needed */
+    max-height: 500px; /* Adjust as needed */
     overflow-y: auto;
     display: block;
 }
@@ -126,4 +126,24 @@ body {
 .info-card.show-contacts.show-history {
     overflow-y: auto;
     max-height: 400px; /* Adjust as needed */
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+
+.contact-card:hover {
+    background: #f0f0f0;
+}
+
+.contact-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
