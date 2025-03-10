@@ -23,14 +23,16 @@ body {
 .info-card {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
     width: 300px;
     position: absolute;
-    top: 10%;
-    right: 5%;
+    top: 1%;
+    right: 1%;
     display: flex;
     flex-direction: column;
+    transition: height 0.3s ease-in-out;
+    overflow-y: auto; /* Allows scrolling */
 }
 
 .info-card h3, .info-card p {
@@ -47,6 +49,9 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
 }
 
 .button-group button:hover {
@@ -59,4 +64,66 @@ body {
     background-color: #bbb;
     border-radius: 50%;
     margin-bottom: 10px;
+}
+
+/* Top Section (Remains Visible) */
+.top-section {
+    text-align: center;
+}
+.history-panel,
+.contacts-panel {
+    display: none; /* Hide them initially */
+}
+
+/* History Panel */
+.history-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Show history when .show-history is added */
+.info-card.show-history .history-panel {
+    max-height: 500px; /* Adjust as needed */
+    overflow-y: auto;
+    display: block;
+}
+
+/* Ensure last conversation is visible by default */
+.last-convo {
+    max-height: 150px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Hide last conversation when .show-history is active */
+.info-card.show-history .last-convo, .info-card.show-contacts .last-convo {
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.contacts-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.info-card.show-contacts .contacts-panel {
+    max-height: 150px; /* Adjust as needed */
+    overflow-y: auto;
+    display: block;
+}
+
+.info-card.show-contacts.show-history {
+    overflow-y: auto;
+    max-height: 400px; /* Adjust as needed */
 }

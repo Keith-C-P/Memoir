@@ -45,11 +45,49 @@ function mockPersonDetected() {
 // Simulate detection every 5 seconds
 setInterval(mockPersonDetected, 5000);
 
-// 4️⃣ Placeholder functions for buttons
-function viewHistory() {
-    alert("View History Clicked!");
+// 2️⃣ Function to toggle history panel visibility
+function toggleHistory() {
+    const infoCard = document.getElementById("infoCard");
+    // Check if history panel is already open
+    const isHistoryOpen = infoCard.classList.contains("show-history");
+
+    if (isHistoryOpen) {
+        // If history is already open, close it
+        infoCard.classList.remove("show-history");
+        infoCard.classList.add("show-convo");
+    } else {
+        // Otherwise, open history and close conversation panel if it's open
+        infoCard.classList.add("show-history");
+        infoCard.classList.remove("show-contacts"); 
+        infoCard.classList.remove("show-convo"); 
+
+    }
+    // adjustScrollability();
 }
 
-function viewContacts() {
-    alert("View Contacts Clicked!");
+
+function toggleContacts() {
+    const infoCard = document.getElementById("infoCard");
+    const isContactsOpen = infoCard.classList.contains("show-contacts");
+
+    if (isContactsOpen) {
+        infoCard.classList.remove("show-contacts");
+        infoCard.classList.add("show-convo"); // Restore last convo when closing contacts
+    } else {
+        infoCard.classList.add("show-contacts");
+        infoCard.classList.remove("show-history"); // Hide history & last convo
+        infoCard.classList.remove("show-convo"); 
+
+    }
+    // adjustScrollability();
 }
+
+// function adjustScrollability() {
+//     const infoCard = document.getElementById("infoCard");
+    
+//     if (infoCard.classList.contains("show-history") || infoCard.classList.contains("show-contacts")) {
+//         infoCard.style.overflowY = "auto"; // Enable scrolling
+//     } else {
+//         infoCard.style.overflowY = "hidden"; // Disable scrolling when nothing is open
+//     }
+// }

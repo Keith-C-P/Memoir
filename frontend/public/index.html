@@ -13,19 +13,85 @@
 
     <!-- Info Card -->
     <div class="info-card" id="infoCard">
-        <div class="person-photo">
-            <img src="./assets/cat.jpeg" alt="" class="person-photo">
+        <div class="top-section">
+            <div class="person-photo">
+                <img src="./assets/cat.jpeg" alt="Person Photo" class="person-photo">
+            </div>
+            <h3 id="personName">Name: Keith</h3>
+            <p id="personRelation">Relation: --</p>
+            <p id="lastMet">Last met: Yesterday</p>
         </div>
-        <h3 id="personName">Name: --</h3>
-        <p id="personRelation">Relation: --</p>
-        <p id="lastMet">Last met: --</p>
-        <h4>Last Conversation</h4>
-        <ul id="conversationList">
-            <li>Waiting for data...</li>
-        </ul>
+
+        <div class="last-convo show-convo" id="lastConvo">
+            <h4>Last Conversation</h4>
+            <ul id="conversationList">
+                <li>Waiting for data...</li>
+            </ul>
+        </div>
+
+        <div class="history-panel" id="historyPanel">
+            <h4>Chat History</h4>
+            <ul id="historyList">
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+                <li>Old conversation 1</li>
+                <li>Old conversation 2</li>
+                <li>Old conversation 3</li>
+                <li>Old conversation 4</li>
+                <li>Old conversation 5</li>
+            </ul>
+        </div>
+
+        <div class="contacts-panel" id="contactsPanel">
+            <h4>Contacts</h4>
+            <ul>
+                <li class="contact-card">Alice</li>
+                <li class="contact-card">Bob</li>
+                <li class="contact-card">Charlie</li>
+            </ul>
+        </div>
+
         <div class="button-group">
-            <button onclick="viewHistory()">View History</button>
-            <button onclick="viewContacts()">View Contacts</button>
+            <button onclick="toggleHistory()">View History</button>
+            <button onclick="toggleContacts()">View Contacts</button>
         </div>
     </div>
 
