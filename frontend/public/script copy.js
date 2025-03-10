@@ -16,9 +16,14 @@ function updateInfoCard(personData) {
     document.getElementById("personName").innerText = `Name: ${personData.name}`;
     document.getElementById("personRelation").innerText = `Relation: ${personData.relation}`;
     document.getElementById("lastMet").innerText = `Last met: ${personData.lastMet}`;
-    document.getElementById("conversationList").innerText = `${personData.conversation}`;
     
-    
+    let conversationList = document.getElementById("conversationList");
+    conversationList.innerHTML = ""; // Clear old data
+    personData.conversation.forEach(point => {
+        let li = document.createElement("li");
+        li.innerText = point;
+        conversationList.appendChild(li);
+    });
 
     // document.getElementById("infoCard").classList.add("show-convo");
     // document.getElementById("infoCard").classList.remove("show-history", "show-contacts");
@@ -104,7 +109,12 @@ const _001 = {
     relation: "Friend",
     lastMet: "Yesterday",
     photo: "./assets/cat.jpeg",
-    conversation: "My name is Keith. Im a dude. Point blah blah blah. Point blah blah blah"    
+    conversation: [
+        "My name is Keith",
+        "Im a dude",
+        "Point blah blah blah",
+        "Point blah blah blah"
+    ]
 };
 
 const _002 = {
@@ -112,8 +122,12 @@ const _002 = {
     relation: "Colleague",
     lastMet: "Last week",
     photo: "./assets/alice.jpeg",
-    conversation: "My name is Alice. Im a girl. Point blah blah blah. Point blah blah blah"    
-
+    conversation: [
+        "Im alice",
+        "Point blah blah blah",
+        "Point blah blah blah",
+        "Point blah blah blah"
+    ]
 
 }
 
@@ -122,7 +136,11 @@ const _003 = {
     relation: "Brother",
     lastMet: "Today",
     photo: "./assets/john.jpeg",
-    conversation: "My name is John. Im a dude. Point blah blah blah. Point blah blah blah"    
-
+    conversation: [
+        "Im John",
+        "Point blah blah blah",
+        "Point blah blah blah",
+        "Point blah blah blah"
+    ]
 
 }
