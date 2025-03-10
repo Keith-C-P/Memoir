@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Webcam Video Background -->
+    <video id="videoBackground" autoplay></video>
+
+    <!-- Info Card -->
+    <div class="info-card" id="infoCard">
+        <div class="person-photo">
+            <img src="./assets/cat.jpeg" alt="" class="person-photo">
+        </div>
+        <h3 id="personName">Name: --</h3>
+        <p id="personRelation">Relation: --</p>
+        <p id="lastMet">Last met: --</p>
+        <h4>Last Conversation</h4>
+        <ul id="conversationList">
+            <li>Waiting for data...</li>
+        </ul>
+        <div class="button-group">
+            <button onclick="viewHistory()">View History</button>
+            <button onclick="viewContacts()">View Contacts</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
